@@ -38,3 +38,5 @@ $ python manage.py test
 * Under normal circumstances, I would discuss whether fixtures should be included in the repo or not with the development team and stakeholders (depending on the business need, and whether PII is stored in the fixtures). For convenience, the fixtures are included.
 * The data import policy is conservative: for example, duplicate data is detected. Data imports happen within a transaction block, so if an exception is raised than the entire operation fails.
 * No API authentication is assumed to be  required, as the problem statement did not indicate the way that this API would be accessed. To that end, Django REST framework supports a variety of a [authentication methods](https://www.django-rest-framework.org/api-guide/authentication/).
+* For simplicity, I treated addresses as a text field as the structure of Paranuaran addresses is unknown. In a real solution I would look to properly parse the address into an appropriate structure.
+* Person balances are conveniently expressed in USD, despite living in Paranuara.
