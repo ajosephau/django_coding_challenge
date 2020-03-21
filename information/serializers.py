@@ -1,8 +1,20 @@
 from rest_framework import serializers
-from rest_framework.serializers import ListSerializer
 
-from information.models import Person, Food
+from information.models import Person, Food, Company
 
+
+class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = ['name']
+
+
+class CompanySerializer(serializers.ModelSerializer):
+    employees = PersonSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Company
+        fields = ['name', 'employees']
 
 class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
     username = serializers.SerializerMethodField()

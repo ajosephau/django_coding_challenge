@@ -57,7 +57,7 @@ class Person(models.Model):
     registered = models.DateTimeField()
 
     # relationships
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL,null=True)
+    company = models.ForeignKey(Company, related_name='employees', on_delete=models.SET_NULL,null=True)
     favourite_foods = models.ManyToManyField(Food)
     tags = models.ManyToManyField(Tag)
     friends = models.ManyToManyField("Person", related_name="friends_of")
