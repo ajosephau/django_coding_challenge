@@ -2,7 +2,7 @@
 By Anthony Joseph
 
 ## Installation
-* Install Python 3 if otherwise not installed
+* Install Python 3 if not installed
 * Create a virtual environment:
 ```console
 $ python3 -m venv ~/.virtualenvs/paranuara_api
@@ -25,7 +25,7 @@ $ python manage.py runserver 8000
 
 ## Documentation
 
-Once the server is running, [OpenAPI/Swagger documentation is available](www.tbd.com).
+Once the server is running, [OpenAPI/Swagger documentation is available](http://127.0.0.1:8000/swagger/), assuming the server was started up as above.
 
 ## Testing
  To run the unit tests, use 
