@@ -130,7 +130,7 @@ def import_people_json(people_json_obj):
                                                eye_colour=eye_color,
                                                gender=gender_as_enum,
                                                email=email,
-                                               phone_number=phone,
+                                               phone=phone,
                                                address=address,
                                                about=about,
                                                registered=dateutil.parser.parse(registered),

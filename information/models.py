@@ -26,6 +26,10 @@ class Food(models.Model):
         default=FRUIT,
     )
 
+class PersonManager(models.Manager):
+    def alive_mutual_friends_brown_eyes(self, person_one, person_two):
+        return (person_one.friends.all() & person_two.friends.all()).filter(has_died=False, eye_colour="brown")
+
 class Person(models.Model):
     MALE = 'M'
     FEMALE = 'F'
@@ -50,7 +54,7 @@ class Person(models.Model):
         default=NOT_SPECIFIED,
     )
     email = models.EmailField()
-    phone_number = PhoneNumberField()
+    phone = PhoneNumberField()
     address = models.TextField()
     about = models.TextField()
     greeting = models.TextField()
@@ -61,3 +65,5 @@ class Person(models.Model):
     favourite_foods = models.ManyToManyField(Food)
     tags = models.ManyToManyField(Tag)
     friends = models.ManyToManyField("Person", related_name="friends_of")
+
+    objects = PersonManager()
