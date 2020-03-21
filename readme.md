@@ -22,6 +22,7 @@ $ python manage.py import_json_data "fixtures/example/companies.json" "fixtures/
 $ python manage.py runserver 8000
 ``` 
 * (optional) Change the `SECRET_KEY`in `ParanuaraAPI/settings.py`.
+* (optional) Change the `DEBUG`in `ParanuaraAPI/settings.py` to False if running in production context.
 
 ## Documentation
 
