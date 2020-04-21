@@ -55,7 +55,7 @@ class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_food_by_type(person, type):
-        return [food.name for food in person.favourite_foods.filter(type=type)]
+        return person.favourite_foods.filter(type=type).values_list('name',flat=True)
 
 
 class FoodSerializer(serializers.ModelSerializer):
