@@ -1,5 +1,5 @@
 asgiref==3.2.5
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 django-money==1.0
 django-phonenumber-field==4.0.0
 Django==3.1.6
