@@ -2,7 +2,7 @@ asgiref==3.2.5
 djangorestframework==3.11.2
 django-money==1.0
 django-phonenumber-field==4.0.0
-Django==3.1.10
+Django==3.1.12
 drf-yasg==1.17.1
 phonenumbers==8.11.5
 pytz==2019.3
