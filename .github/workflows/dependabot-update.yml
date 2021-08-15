@@ -1,14 +1,12 @@
-name: auto-merge
+name: Auto Merge Dependency Updates
 
 on:
-  pull_request_target:
+  - pull_request_target
 
 jobs:
-  auto-merge:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - uses: tjenkinson/gh-action-auto-merge-dependency-updates@v1
         with:
-          target: minor
-          github-token: ${{ secrets.mytoken }}
+          allowed-actors: dependabot-preview[bot], dependabot[bot]
