@@ -1,4 +1,4 @@
-djangorestframework==3.11.2
+djangorestframework==3.12.4
 django-money==2.0.1
 django-phonenumber-field==5.2.0
 Django==3.2.6
