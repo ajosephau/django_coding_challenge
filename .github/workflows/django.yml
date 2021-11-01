@@ -35,8 +35,9 @@ jobs:
     - name: Run tests
       run: python manage.py test
   dependabot:
+    needs: [build]
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot' }}
     steps:
       - name: Dependabot metadata
         id: metadata
