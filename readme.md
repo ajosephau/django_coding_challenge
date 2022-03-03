@@ -1,6 +1,7 @@
 # Paranuara API Challenge
-By Anthony Joseph
 [![Django testing](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml)
+
+By Anthony Joseph
 
 ## Installation
 * Install Python 3 if not installed
