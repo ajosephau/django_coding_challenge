@@ -1,12 +1,12 @@
 # Paranuara API Challenge
-[![Run Django testing w/ coverage](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml)
-[![codecov](https://codecov.io/gh/ajosephau/django-coding-challenge/branch/master/graph/badge.svg?token=L64OL9ZNK6)](https://codecov.io/gh/ajosephau/django-coding-challenge)
+[![Run Django testing w/ coverage](https://github.com/ajosephau/django_coding_challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django_coding_challenge/actions/workflows/django.yml)
+[![codecov](https://codecov.io/gh/ajosephau/django-coding-challenge/branch/master/graph/badge.svg?token=L64OL9ZNK6)](https://codecov.io/gh/ajosephau/django_coding_challenge)
 
 By Anthony Joseph
 
 ## Briefing
 
-Paranuara is a class-m planet. Those types of planets can support human life, for that reason the president of the Checktoporov decides to send some people to colonise this new planet and
+Paranuara is a `class-m` planet. Those types of planets can support human life, for that reason the president of the Checktoporov decides to send some people to colonise this new planet and
 reduce the number of people in their own country. After 10 years, the new president wants to know how the new colony is growing, and wants some information about his citizens. Hence he hired you to build a rest API to provide the desired information.
 
 The government from Paranuara will provide you two json files (located at resource folder) which will provide information about all the citizens in Paranuara (name, age, friends list, fruits and vegetables they like to eat...) and all founded companies on that planet. 
