@@ -1,6 +1,12 @@
 name: Python application
 
-on: [pull_request_target]
+on:
+  pull_request:
+    branches: [ "master", "main" ]
+    paths-ignore: [ "docs/**" ]
+
+  push:
+    branches: [ "master", "main" ]
 
 permissions:
   pull-requests: write
