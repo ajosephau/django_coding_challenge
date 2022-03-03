@@ -1,4 +1,4 @@
-name: Python application
+name: Run Django testing w/ coverage
 
 on:
   pull_request:

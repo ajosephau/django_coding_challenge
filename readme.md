@@ -1,5 +1,5 @@
 # Paranuara API Challenge
-[![Django testing](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml)
+[![Run Django testing w/ coverage](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml)
 
 By Anthony Joseph
 
