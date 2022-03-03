@@ -20,7 +20,7 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Paranuara API",
+      title="Paranuara API Specification",
       default_version='v1',
       description="Anthony Joseph's coding challenge submission",
       contact=openapi.Contact(email="anthony@fastmail.com.au"),
