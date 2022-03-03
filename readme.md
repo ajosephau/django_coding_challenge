@@ -1,5 +1,6 @@
 # Paranuara API Challenge
 [![Run Django testing w/ coverage](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml/badge.svg)](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml)
+[![codecov](https://codecov.io/gh/ajosephau/django-coding-challenge/branch/master/graph/badge.svg?token=L64OL9ZNK6)](https://codecov.io/gh/ajosephau/django-coding-challenge)
 
 By Anthony Joseph
 
