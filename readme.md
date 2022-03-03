@@ -36,6 +36,14 @@ Once the server is running, [OpenAPI/Swagger documentation is available](http://
 $ python manage.py test
 ``` 
 
+Or pytest with coverage reporting
+```console
+$ pytest . --cov . --cov-report term
+``` 
+
+## Automated processes
+ [Github Actions](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml) run on all commits, with the test suite running with code coverage reports being uploaded as a zipped artifact on each run. 
+
 ## Notes
 * (Design decision) Django REST framework (DRF) was used to add API support to this project due to its popularity and my familiarity with the framework.
 * (Design decision) Under normal circumstances, I would discuss whether fixtures should be included in the repo or not with the development team and stakeholders (depending on the business need, and whether personally-identifiable information (PII) is stored in the fixtures). For convenience, the fixtures are included.
