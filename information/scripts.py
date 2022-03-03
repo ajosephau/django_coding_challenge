@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 from decimal import Decimal
 
 import dateutil.parser
 
-from information.models import Company, Food, Tag, Person
+from information.models import Company, Food, Person, Tag
 
 
 def import_company_json(company_json_obj):
@@ -17,8 +18,8 @@ def import_company_json(company_json_obj):
         raise TypeError("Requires a list input")
 
     for company in company_json_obj:
-        index = company.get('index')
-        name = company.get('company')
+        index = company.get("index")
+        name = company.get("company")
         if not index and not (index == 0):
             issue_list.append(f"Company: {company} missing 'index' key.")
         elif not name:
@@ -47,26 +48,26 @@ def import_people_json(people_json_obj):
     friend_dict = {}
 
     for person in people_json_obj:
-        index = person.get('index')
-        name = person.get('name')
-        id = person.get('_id')
-        guid = person.get('guid')
-        has_died = person.get('has_died')
-        balance = person.get('balance')
-        picture = person.get('picture')
-        age = person.get('age')
-        eye_color = person.get('eyeColor')
-        gender = person.get('gender')
-        company_id = person.get('company_id')
-        email = person.get('email')
-        phone = person.get('phone')
-        address = person.get('address')
-        about = person.get('about')
-        registered = person.get('registered')
-        greeting = person.get('greeting')
-        tags = person.get('tags')
-        friends = person.get('friends')
-        favouriteFood = person.get('favouriteFood')
+        index = person.get("index")
+        name = person.get("name")
+        id = person.get("_id")
+        guid = person.get("guid")
+        has_died = person.get("has_died")
+        balance = person.get("balance")
+        picture = person.get("picture")
+        age = person.get("age")
+        eye_color = person.get("eyeColor")
+        gender = person.get("gender")
+        company_id = person.get("company_id")
+        email = person.get("email")
+        phone = person.get("phone")
+        address = person.get("address")
+        about = person.get("about")
+        registered = person.get("registered")
+        greeting = person.get("greeting")
+        tags = person.get("tags")
+        friends = person.get("friends")
+        favouriteFood = person.get("favouriteFood")
         if not index and not (index == 0):
             issue_list.append(f"Person: {person} missing 'index' key.")
         elif not name:
@@ -109,33 +110,34 @@ def import_people_json(people_json_obj):
             if Person.objects.filter(index=index).exists():
                 issue_list.append(f"Person: {person} already exists.")
             else:
-                balance_decimal = Decimal(balance.replace('$', '').replace(',', ''))
-                if gender == 'male':
+                balance_decimal = Decimal(balance.replace("$", "").replace(",", ""))
+                if gender == "male":
                     gender_as_enum = Person.MALE
-                elif gender == 'female':
+                elif gender == "female":
                     gender_as_enum = Person.FEMALE
                 else:
                     gender_as_enum = Person.NOT_SPECIFIED
 
                 company = Company.objects.get(index=(company_id - 1))
 
-                person = Person.objects.create(index=index,
-                                               name=name,
-                                               id=id,
-                                               guid=guid,
-                                               has_died=has_died,
-                                               balance=balance_decimal,
-                                               picture=picture,
-                                               age=age,
-                                               eye_colour=eye_color,
-                                               gender=gender_as_enum,
-                                               email=email,
-                                               phone=phone,
-                                               address=address,
-                                               about=about,
-                                               registered=dateutil.parser.parse(registered),
-                                               company=company
-                                               )
+                person = Person.objects.create(
+                    index=index,
+                    name=name,
+                    id=id,
+                    guid=guid,
+                    has_died=has_died,
+                    balance=balance_decimal,
+                    picture=picture,
+                    age=age,
+                    eye_colour=eye_color,
+                    gender=gender_as_enum,
+                    email=email,
+                    phone=phone,
+                    address=address,
+                    about=about,
+                    registered=dateutil.parser.parse(registered),
+                    company=company,
+                )
 
                 friend_dict[index] = friends
 
@@ -147,12 +149,14 @@ def import_people_json(people_json_obj):
 
                 # create food links
                 for food in favouriteFood:
-                    if food in ["apple","banana","orange","strawberry"]:
+                    if food in ["apple", "banana", "orange", "strawberry"]:
                         type = Food.FRUIT
-                    elif food in ["beetroot","carrot","celery","cucumber"]:
+                    elif food in ["beetroot", "carrot", "celery", "cucumber"]:
                         type = Food.VEGETABLE
                     else:
-                        raise RuntimeError(f"Cannot classify {food} as {Food.TYPE_CHOICES}")
+                        raise RuntimeError(
+                            f"Cannot classify {food} as {Food.TYPE_CHOICES}"
+                        )
                     food_obj, created = Food.objects.get_or_create(name=food, type=type)
                     person.favourite_foods.add(food_obj)
                     person.save()
@@ -163,7 +167,7 @@ def import_people_json(people_json_obj):
     for person_index in friend_dict.keys():
         person = Person.objects.get(index=person_index)
         for friend_index in friend_dict[person_index]:
-            friend = Person.objects.get(index=friend_index['index'])
+            friend = Person.objects.get(index=friend_index["index"])
             person.friends.add(friend)
             person.save()
 

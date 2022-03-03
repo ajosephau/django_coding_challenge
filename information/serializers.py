@@ -1,37 +1,41 @@
+# -*- coding: utf-8 -*-
 from rest_framework import serializers
 
-from information.models import Person, Food, Company
+from information.models import Company, Food, Person
 
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ['name']
+        fields = ["name"]
 
 
 class PersonDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ['name', 'age', 'address', 'phone']
+        fields = ["name", "age", "address", "phone"]
 
 
 class MutualFriendsDetailSerializer(serializers.BaseSerializer):
     def to_representation(self, instance):
-        person_one = self.context['person_one']
-        person_two = self.context['person_two']
-        mutual_friends = self.context['mutual_friends']
+        person_one = self.context["person_one"]
+        person_two = self.context["person_two"]
+        mutual_friends = self.context["mutual_friends"]
         return {
-            'person_one': PersonDetailSerializer(person_one).data,
-            'person_two': PersonDetailSerializer(person_two).data,
-            'mutual_friends': [PersonSerializer(person).data for person in mutual_friends],
+            "person_one": PersonDetailSerializer(person_one).data,
+            "person_two": PersonDetailSerializer(person_two).data,
+            "mutual_friends": [
+                PersonSerializer(person).data for person in mutual_friends
+            ],
         }
+
 
 class CompanySerializer(serializers.ModelSerializer):
     employees = PersonSerializer(many=True, read_only=True)
 
     class Meta:
         model = Company
-        fields = ['name', 'employees']
+        fields = ["name", "employees"]
 
 
 class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
@@ -41,7 +45,7 @@ class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Person
-        fields = ['username', 'age', 'fruits', 'vegetables']
+        fields = ["username", "age", "fruits", "vegetables"]
 
     @staticmethod
     def get_username(person):
@@ -55,10 +59,10 @@ class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_food_by_type(person, type):
-        return person.favourite_foods.filter(type=type).values_list('name',flat=True)
+        return person.favourite_foods.filter(type=type).values_list("name", flat=True)
 
 
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ['name']
+        fields = ["name"]

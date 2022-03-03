@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.test import TestCase
 
 from information.models import Company
@@ -23,19 +24,33 @@ class CompanyImportTestCase(TestCase):
         self.assertEqual(issues, [])
 
     def test_company_import_valid_case(self):
-        input_data = [{'index': 0, 'company': 'NETBOOK'}, {'index': 1, 'company': 'PERMADYNE'}]
+        input_data = [
+            {"index": 0, "company": "NETBOOK"},
+            {"index": 1, "company": "PERMADYNE"},
+        ]
         issues, count = import_company_json(input_data)
         self.assertEqual(issues, [])
         self.assertEqual(Company.objects.all().count(), 2)
-        self.assertEqual(Company.objects.get(index=0).name, 'NETBOOK')
-        self.assertEqual(Company.objects.get(index=1).name, 'PERMADYNE')
+        self.assertEqual(Company.objects.get(index=0).name, "NETBOOK")
+        self.assertEqual(Company.objects.get(index=1).name, "PERMADYNE")
 
     def test_company_import_invalid_case(self):
-        input_data = [{'index': 0, 'company': 'NETBOOK'}, {'index': 0, 'company': 'NETBOOK'}, {'index': 1}, {'company': 'PERMADYNE'}]
+        input_data = [
+            {"index": 0, "company": "NETBOOK"},
+            {"index": 0, "company": "NETBOOK"},
+            {"index": 1},
+            {"company": "PERMADYNE"},
+        ]
         issues, count = import_company_json(input_data)
-        self.assertEqual(set(issues),
-                         set(["Company: {'index': 0, 'company': 'NETBOOK'} already exists.",
-                              "Company: {'index': 1} missing 'company' key.",
-                              "Company: {'company': 'PERMADYNE'} missing 'index' key."]))
+        self.assertEqual(
+            set(issues),
+            set(
+                [
+                    "Company: {'index': 0, 'company': 'NETBOOK'} already exists.",
+                    "Company: {'index': 1} missing 'company' key.",
+                    "Company: {'company': 'PERMADYNE'} missing 'index' key.",
+                ]
+            ),
+        )
         self.assertEqual(Company.objects.all().count(), 1)
-        self.assertEqual(Company.objects.get(index=0).name, 'NETBOOK')
+        self.assertEqual(Company.objects.get(index=0).name, "NETBOOK")

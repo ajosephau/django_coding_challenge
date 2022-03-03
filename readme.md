@@ -9,8 +9,8 @@ By Anthony Joseph
 Paranuara is a `class-m` planet. Those types of planets can support human life, for that reason the president of the Checktoporov decides to send some people to colonise this new planet and
 reduce the number of people in their own country. After 10 years, the new president wants to know how the new colony is growing, and wants some information about his citizens. Hence he hired you to build a rest API to provide the desired information.
 
-The government from Paranuara will provide you two json files (located at resource folder) which will provide information about all the citizens in Paranuara (name, age, friends list, fruits and vegetables they like to eat...) and all founded companies on that planet. 
-Unfortunately, the systems are not that evolved yet, thus you need to clean and organise the data before use. 
+The government from Paranuara will provide you two json files (located at resource folder) which will provide information about all the citizens in Paranuara (name, age, friends list, fruits and vegetables they like to eat...) and all founded companies on that planet.
+Unfortunately, the systems are not that evolved yet, thus you need to clean and organise the data before use.
 For example, instead of providing a list of fruits and vegetables their citizens like, they are providing a list of favourite food, and you will need to split that list (please, check below the options for fruits and vegetables).
 
 ### New Features
@@ -25,20 +25,20 @@ Your API must provides these end points:
 ```console
 $ python3 -m venv ~/.virtualenvs/paranuara_api
 $ source ~/.virtualenvs/paranuara_api/bin/activate
-``` 
+```
 * Install dependencies
 ```console
 $ pip install -r requirements.txt
-``` 
+```
 * Setup initial database and dataset
 ```console
 $ python manage.py migrate
 $ python manage.py import_json_data "fixtures/example/companies.json" "fixtures/example/people.json"
-``` 
+```
 * Run server on port 8000
 ```console
 $ python manage.py runserver 8000
-``` 
+```
 * (optional) Change the `SECRET_KEY`in `ParanuaraAPI/settings.py`.
 * (optional) Change the `DEBUG`in `ParanuaraAPI/settings.py` to False if running in production context.
 
@@ -47,18 +47,21 @@ $ python manage.py runserver 8000
 Once the server is running, [OpenAPI/Swagger documentation is available](http://127.0.0.1:8000/swagger/), assuming the server was started up as above.
 
 ## Testing
- To run the unit tests, use 
+ To run the unit tests, use
 ```console
 $ python manage.py test
-``` 
+```
 
 Or pytest with coverage reporting
+
+## Quality Assurance
+ To run the quality assurance checks, run
 ```console
-$ pytest . --cov . --cov-report term
-``` 
+$ pre-commit run --all-file
+```
 
 ## Automated processes
- [Github Actions](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml) run on all commits, with the test suite running with code coverage reports being uploaded as a zipped artifact on each run. 
+ [Github Actions](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml) run on all commits, with the test suite running with code coverage reports being uploaded as a zipped artifact on each run.
 
 ## Notes
 * (Design decision) Django REST framework (DRF) was used to add API support to this project due to its popularity and my familiarity with the framework.

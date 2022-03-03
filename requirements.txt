@@ -11,3 +11,4 @@ pytest==7.0.1
 pytest-cov==3.0.0
 pytest-django==4.5.2
 pytest-sugar==0.9.4
+pre-commit==2.17.0  # https://github.com/pre-commit/pre-commit
