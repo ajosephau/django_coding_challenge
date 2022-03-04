@@ -74,7 +74,7 @@ $ mypy --install-types information/
 $ pre-commit run --all-files
 ```
 
-Pre-commit settings are managed in .pre-commit-config.yaml
+Pre-commit settings are managed in `.pre-commit-config.yaml`.
 
 ## Automated processes
  [Github Actions](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml) run on all commits, with the test suite running with code coverage reports being uploaded as a zipped artifact on each run.
