@@ -71,7 +71,7 @@ $ mypy --install-types information/
 ## Quality Assurance
  To run the quality assurance checks, run
 ```console
-$ pre-commit run --all-file
+$ pre-commit run --all-files
 ```
 
 ## Automated processes
