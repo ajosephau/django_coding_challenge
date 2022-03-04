@@ -47,6 +47,8 @@ jobs:
       run: python manage.py migrate
     - name: Run static checks  
       run: pre-commit run --all-file
+    - name: Run type checks  
+      run: mypy --install-types information/
     - name: Run tests
       run: pytest . --cov . --cov-report html --cov-report xml --cov-report term
     - name: Upload HTML coverage report

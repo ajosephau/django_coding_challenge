@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from decimal import Decimal
+from typing import Any, Dict, List, Tuple, Union
 
 import dateutil.parser
 
 from information.models import Company, Food, Person, Tag
 
 
-def import_company_json(company_json_obj):
+def import_company_json(
+    company_json_obj: Union[Dict, List[Dict[str, Any]]]
+) -> Tuple[List[str], int]:
     """
     Imports a list of company JSON objects as specified by the Paranuara government
     """
@@ -34,7 +37,9 @@ def import_company_json(company_json_obj):
     return issue_list, num_companies_created
 
 
-def import_people_json(people_json_obj):
+def import_people_json(
+    people_json_obj: Union[Dict, List[Dict[str, Any]], List[Dict[str, Any]]]
+) -> Tuple[List[str], int]:
     """
     Imports a list of people JSON objects as specified by the Paranuara government
     """
@@ -120,7 +125,7 @@ def import_people_json(people_json_obj):
 
                 company = Company.objects.get(index=(company_id - 1))
 
-                person = Person.objects.create(
+                person = Person.objects.create(  # type: ignore
                     index=index,
                     name=name,
                     id=id,
@@ -144,8 +149,8 @@ def import_people_json(people_json_obj):
                 # create tags links
                 for tag in tags:
                     tag_obj, created = Tag.objects.get_or_create(name=tag)
-                    person.tags.add(tag_obj)
-                    person.save()
+                    person.tags.add(tag_obj)  # type: ignore
+                    person.save()  # type: ignore
 
                 # create food links
                 for food in favouriteFood:
@@ -158,17 +163,17 @@ def import_people_json(people_json_obj):
                             f"Cannot classify {food} as {Food.TYPE_CHOICES}"
                         )
                     food_obj, created = Food.objects.get_or_create(name=food, type=type)
-                    person.favourite_foods.add(food_obj)
-                    person.save()
+                    person.favourite_foods.add(food_obj)  # type: ignore
+                    person.save()  # type: ignore
 
                 num_people_created += 1
 
     # populate friends link now that all people are saved.
     for person_index in friend_dict.keys():
-        person = Person.objects.get(index=person_index)
+        person = Person.objects.get(index=person_index)  # type: ignore
         for friend_index in friend_dict[person_index]:
             friend = Person.objects.get(index=friend_index["index"])
-            person.friends.add(friend)
-            person.save()
+            person.friends.add(friend)  # type: ignore
+            person.save()  # type: ignore
 
     return issue_list, num_people_created

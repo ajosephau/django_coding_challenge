@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from typing import Any, Dict
+
+from django.db.models.query import QuerySet
 from rest_framework import serializers
 
 from information.models import Company, Food, Person
@@ -17,7 +20,7 @@ class PersonDetailSerializer(serializers.ModelSerializer):
 
 
 class MutualFriendsDetailSerializer(serializers.BaseSerializer):
-    def to_representation(self, instance):
+    def to_representation(self, instance: Person) -> Dict[str, Any]:
         person_one = self.context["person_one"]
         person_two = self.context["person_two"]
         mutual_friends = self.context["mutual_friends"]
@@ -48,17 +51,17 @@ class PersonWithFoodByTypeSerializer(serializers.ModelSerializer):
         fields = ["username", "age", "fruits", "vegetables"]
 
     @staticmethod
-    def get_username(person):
+    def get_username(person: Person) -> str:
         return person.name
 
-    def get_fruits(self, person):
+    def get_fruits(self, person: Person) -> QuerySet:
         return self.get_food_by_type(person, type=Food.FRUIT)
 
-    def get_vegetables(self, person):
+    def get_vegetables(self, person: Person) -> QuerySet:
         return self.get_food_by_type(person, type=Food.VEGETABLE)
 
     @staticmethod
-    def get_food_by_type(person, type):
+    def get_food_by_type(person: Person, type: str) -> QuerySet:
         return person.favourite_foods.filter(type=type).values_list("name", flat=True)
 
 

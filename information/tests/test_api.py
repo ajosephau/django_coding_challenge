@@ -11,7 +11,7 @@ from information.models import Company, Food, Person
 
 
 class APITestCase(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.company = Company.objects.create(index=0, name="TEST")
         Company.objects.create(index=1, name="EMPTY")
         self.person = Person.objects.create(
@@ -88,7 +88,7 @@ class APITestCase(TestCase):
 
         self.client = Client()
 
-    def test_get_company(self):
+    def test_get_company(self) -> None:
         response = self.client.get("/company/0/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
@@ -103,7 +103,7 @@ class APITestCase(TestCase):
             },
         )
 
-    def test_get_company_no_employees(self):
+    def test_get_company_no_employees(self) -> None:
         response = self.client.get("/company/1/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
@@ -111,11 +111,11 @@ class APITestCase(TestCase):
             {"employees": [], "name": "EMPTY"},
         )
 
-    def test_get_company_doesnt_exist(self):
+    def test_get_company_doesnt_exist(self) -> None:
         response = self.client.get("/company/2/")
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_get_person_food_likes(self):
+    def test_get_person_food_likes(self) -> None:
         response = self.client.get("/person-food/0/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
@@ -128,11 +128,11 @@ class APITestCase(TestCase):
             },
         )
 
-    def test_get_person_food_likes_person_doesnt_exist(self):
+    def test_get_person_food_likes_person_doesnt_exist(self) -> None:
         response = self.client.get("/person-food/42/")
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_getmutual_friends_alive_with_brown_eyes(self):
+    def test_getmutual_friends_alive_with_brown_eyes(self) -> None:
         response = self.client.get("/mutual-friends-alive-brown-eyes/1/2/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
@@ -154,7 +154,7 @@ class APITestCase(TestCase):
             },
         )
 
-    def test_getmutual_friends_alive_with_brown_eyes_no_mutual_friends(self):
+    def test_getmutual_friends_alive_with_brown_eyes_no_mutual_friends(self) -> None:
         response = self.client.get("/mutual-friends-alive-brown-eyes/4/1/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
@@ -176,6 +176,6 @@ class APITestCase(TestCase):
             },
         )
 
-    def test_getmutual_friends_alive_with_brown_eyes_person_doesnt_exist(self):
+    def test_getmutual_friends_alive_with_brown_eyes_person_doesnt_exist(self) -> None:
         response = self.client.get("/mutual-friends-alive-brown-eyes/42/0/")
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

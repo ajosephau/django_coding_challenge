@@ -14,3 +14,6 @@ pytest-sugar==0.9.4
 pre-commit==2.17.0
 mypy==0.931
 pyannotate==1.2.0
+pytest-annotate==1.0.4
+django-stubs==1.9.0
+types_python_dateutil==2.8.9

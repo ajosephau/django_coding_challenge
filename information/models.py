@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.db.models.query import QuerySet  # noqa
 from djmoney.models.fields import MoneyField
 from phonenumber_field.modelfields import PhoneNumberField
+
+from .managers import PersonManager
 
 
 class Company(models.Model):
@@ -26,13 +29,6 @@ class Food(models.Model):
         choices=TYPE_CHOICES,
         default=FRUIT,
     )
-
-
-class PersonManager(models.Manager):
-    def alive_mutual_friends_brown_eyes(self, person_one, person_two):
-        return (person_one.friends.all() & person_two.friends.all()).filter(
-            has_died=False, eye_colour="brown"
-        )
 
 
 class Person(models.Model):

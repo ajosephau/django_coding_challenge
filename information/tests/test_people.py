@@ -6,27 +6,27 @@ from information.scripts import import_people_json
 
 
 class PeopleImportTestCase(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.company = Company.objects.create(index=0, name="TEST")
 
-    def test_people_import_input_type(self):
+    def test_people_import_input_type(self) -> None:
         # check no inpur raises exception
         with self.assertRaises(TypeError):
-            import_people_json()
+            import_people_json()  # type: ignore
 
         # check wrong data type raises exception
-        input_data = {}
+        input_data = {}  # type: ignore
         self.assertTrue(isinstance(input_data, dict))
         with self.assertRaises(TypeError):
             import_people_json(input_data)
 
         # check that valid input returns a valid empty list of issues
-        input_data = []
+        input_data = []  # type: ignore
         self.assertTrue(isinstance(input_data, list))
         issues, count = import_people_json(input_data)
         self.assertEqual(issues, [])
 
-    def test_people_import_valid_case(self):
+    def test_people_import_valid_case(self) -> None:
         input_data = [
             {
                 "_id": "595eeb9cd4f669914b94721e",
@@ -73,7 +73,7 @@ class PeopleImportTestCase(TestCase):
             set(["nulla", "dolore", "consequat"]),
         )
 
-    def test_people_import_invalid_case(self):
+    def test_people_import_invalid_case(self) -> None:
         input_data = [{"_id": "595eeb9cd4f669914b94721e", "company_id": 1}]
         issues, count = import_people_json(input_data)
         self.assertEqual(

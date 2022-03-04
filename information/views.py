@@ -2,6 +2,7 @@
 # fmt: off
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.request import Request
 from rest_framework.response import Response
 
 from information.models import Company, Person
@@ -13,7 +14,7 @@ from information.serializers import (CompanySerializer,
 
 
 @api_view(["GET"])
-def company_by_index(request, index):
+def company_by_index(request: Request, index: int) -> Response:
     """
     Given a company, the API needs to return all their employees.
     Returns an empty list if a company doesn't have any employees.
@@ -31,7 +32,9 @@ def company_by_index(request, index):
 
 
 @api_view(["GET"])
-def mutual_friends_alive_with_brown_eyes(request, person_one_index, person_two_index):
+def mutual_friends_alive_with_brown_eyes(
+    request: Request, person_one_index: int, person_two_index: int
+) -> Response:
     """
     Given 2 people, returns their information (Name, Age, Address, phone) and the list of their
     friends in common which have brown eyes and are still alive.
@@ -60,7 +63,7 @@ def mutual_friends_alive_with_brown_eyes(request, person_one_index, person_two_i
 
 
 @api_view(["GET"])
-def food_for_person_by_index(request, index):
+def food_for_person_by_index(request: Request, index: int) -> Response:
     """
     Given 1 person, returns a list of fruits and vegetables they like.
     """

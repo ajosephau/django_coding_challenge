@@ -1,0 +1,352 @@
+[
+    {
+        "path": "information/managers.py",
+        "line": 9,
+        "func_name": "PersonManager.alive_mutual_friends_brown_eyes",
+        "type_comments": [
+            "(information.models.Person, information.models.Person) -> django.db.models.query.QuerySet"
+        ],
+        "samples": 2
+    },
+    {
+        "path": "information/scripts.py",
+        "line": 14,
+        "func_name": "import_company_json",
+        "type_comments": [
+            "(List[Dict[str, Union[int, str]]]) -> Tuple[List, int]",
+            "(List) -> Tuple[List, int]",
+            "(Dict) -> pyannotate_runtime.collect_types.NoReturnType",
+            "(List[Dict[str, Union[int, str]]]) -> Tuple[List[str], int]"
+        ],
+        "samples": 4
+    },
+    {
+        "path": "information/scripts.py",
+        "line": 42,
+        "func_name": "import_people_json",
+        "type_comments": [
+            "(Dict) -> pyannotate_runtime.collect_types.NoReturnType",
+            "(List) -> Tuple[List, int]",
+            "(List[Dict[str, Union[int, str]]]) -> Tuple[List[str], int]",
+            "(List[Dict[str, Union[bool, int, str]]]) -> Tuple[List, int]",
+            "(List[Dict[str, int]]) -> Tuple[List[str], int]"
+        ],
+        "samples": 5
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 10,
+        "func_name": "PersonSerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 11,
+        "func_name": "Meta",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 16,
+        "func_name": "PersonDetailSerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 17,
+        "func_name": "Meta",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 22,
+        "func_name": "MutualFriendsDetailSerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 23,
+        "func_name": "MutualFriendsDetailSerializer.to_representation",
+        "type_comments": [
+            "(information.models.Person) -> Dict[str, Union[List[rest_framework.utils.serializer_helpers.ReturnDict], rest_framework.utils.serializer_helpers.ReturnDict]]",
+            "(information.models.Person) -> Dict[str, Union[List, rest_framework.utils.serializer_helpers.ReturnDict]]"
+        ],
+        "samples": 2
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 36,
+        "func_name": "CompanySerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 39,
+        "func_name": "Meta",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 44,
+        "func_name": "PersonWithFoodByTypeSerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 49,
+        "func_name": "Meta",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 53,
+        "func_name": "get_username",
+        "type_comments": [
+            "(information.models.Person) -> str"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 57,
+        "func_name": "PersonWithFoodByTypeSerializer.get_fruits",
+        "type_comments": [
+            "(information.models.Person) -> django.db.models.query.QuerySet"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 60,
+        "func_name": "PersonWithFoodByTypeSerializer.get_vegetables",
+        "type_comments": [
+            "(information.models.Person) -> django.db.models.query.QuerySet"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 63,
+        "func_name": "get_food_by_type",
+        "type_comments": [
+            "(information.models.Person, str) -> django.db.models.query.QuerySet"
+        ],
+        "samples": 2
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 68,
+        "func_name": "FoodSerializer",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/serializers.py",
+        "line": 69,
+        "func_name": "Meta",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 14,
+        "func_name": "APITestCase.setUp",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 8
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 91,
+        "func_name": "APITestCase.test_get_company",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 106,
+        "func_name": "APITestCase.test_get_company_no_employees",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 114,
+        "func_name": "APITestCase.test_get_company_doesnt_exist",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 118,
+        "func_name": "APITestCase.test_get_person_food_likes",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 131,
+        "func_name": "APITestCase.test_get_person_food_likes_person_doesnt_exist",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 135,
+        "func_name": "APITestCase.test_getmutual_friends_alive_with_brown_eyes",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 157,
+        "func_name": "APITestCase.test_getmutual_friends_alive_with_brown_eyes_no_mutual_friends",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_api.py",
+        "line": 179,
+        "func_name": "APITestCase.test_getmutual_friends_alive_with_brown_eyes_person_doesnt_exist",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_company.py",
+        "line": 9,
+        "func_name": "CompanyImportTestCase.test_company_import_input_type",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_company.py",
+        "line": 26,
+        "func_name": "CompanyImportTestCase.test_company_import_valid_case",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_company.py",
+        "line": 37,
+        "func_name": "CompanyImportTestCase.test_company_import_invalid_case",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_people.py",
+        "line": 9,
+        "func_name": "PeopleImportTestCase.setUp",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 3
+    },
+    {
+        "path": "information/tests/test_people.py",
+        "line": 12,
+        "func_name": "PeopleImportTestCase.test_people_import_input_type",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_people.py",
+        "line": 29,
+        "func_name": "PeopleImportTestCase.test_people_import_valid_case",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/tests/test_people.py",
+        "line": 76,
+        "func_name": "PeopleImportTestCase.test_people_import_invalid_case",
+        "type_comments": [
+            "() -> None"
+        ],
+        "samples": 1
+    },
+    {
+        "path": "information/views.py",
+        "line": 16,
+        "func_name": "company_by_index",
+        "type_comments": [
+            "(rest_framework.request.Request, int) -> rest_framework.response.Response"
+        ],
+        "samples": 3
+    },
+    {
+        "path": "information/views.py",
+        "line": 34,
+        "func_name": "mutual_friends_alive_with_brown_eyes",
+        "type_comments": [
+            "(rest_framework.request.Request, int, int) -> rest_framework.response.Response"
+        ],
+        "samples": 3
+    },
+    {
+        "path": "information/views.py",
+        "line": 63,
+        "func_name": "food_for_person_by_index",
+        "type_comments": [
+            "(rest_framework.request.Request, int) -> rest_framework.response.Response"
+        ],
+        "samples": 2
+    }
+]

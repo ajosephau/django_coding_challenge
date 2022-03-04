@@ -55,7 +55,17 @@ $ python manage.py test
 Or pytest with coverage reporting
 
 ```console
-$ pytest . --cov . --cov-report term
+$ DJANGO_SETTINGS_MODULE=ParanuaraAPI.settings pytest . --cov . --cov-report term -s --annotate-output=./annotations.json
+```
+
+### Type checking
+
+To automatically perform type checking, please run the following commands:
+
+```console
+$ DJANGO_SETTINGS_MODULE=ParanuaraAPI.settings pytest . --cov . --cov-report term -s --annotate-output=./annotations.json
+$ DJANGO_SETTINGS_MODULE=ParanuaraAPI.settings pyannotate -w --py3 --type-info ./annotations.json information/
+$ mypy --install-types information/
 ```
 
 ## Quality Assurance
