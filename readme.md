@@ -54,6 +54,10 @@ $ python manage.py test
 
 Or pytest with coverage reporting
 
+```console
+$ pytest . --cov . --cov-report term
+```
+
 ## Quality Assurance
  To run the quality assurance checks, run
 ```console
