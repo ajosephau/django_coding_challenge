@@ -78,7 +78,7 @@ Pre-commit settings are managed in `.pre-commit-config.yaml` and are run on each
 
 ## Automated processes
  [Github Actions](https://github.com/ajosephau/django-coding-challenge/actions/workflows/django.yml) run on all commits, with the test suite running with code coverage reports being uploaded as a zipped artifact on each run.
- 
+
  For pull requests, a comment with test coverage is automatically generated.
 
 ## Notes
