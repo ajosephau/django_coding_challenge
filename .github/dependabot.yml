@@ -7,3 +7,10 @@ updates:
     time: '12:00'
   target-branch: "master"
   open-pull-requests-limit: 10
+
+- package-ecosystem: "github-actions"
+  # Workflow files stored in the
+  # default location of `.github/workflows`
+  directory: "/.github/workflows"
+  schedule:
+    interval: "daily"
