@@ -26,7 +26,7 @@ SECRET_KEY = "s9tw3jd&u9i8fqg$q@f7-dxny=m035fx3fok+rt-w8s6yn#t_w"  # nosec
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # nosec
 
-ALLOWED_HOSTS: list[str] = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -125,3 +125,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
