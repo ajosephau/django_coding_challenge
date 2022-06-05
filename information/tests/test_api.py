@@ -92,7 +92,7 @@ class APITestCase(TestCase):
         response = self.client.get("/company/0/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
-            json.loads(response.content.decode("UTF-8")),
+            json.loads(response.content.decode("UTF-8")),  # type: ignore
             {
                 "employees": [
                     {"name": "Anthony Joseph"},
@@ -107,7 +107,7 @@ class APITestCase(TestCase):
         response = self.client.get("/company/1/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
-            json.loads(response.content.decode("UTF-8")),
+            json.loads(response.content.decode("UTF-8")),  # type: ignore
             {"employees": [], "name": "EMPTY"},
         )
 
@@ -119,7 +119,7 @@ class APITestCase(TestCase):
         response = self.client.get("/person-food/0/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
-            json.loads(response.content.decode("UTF-8")),
+            json.loads(response.content.decode("UTF-8")),  # type: ignore
             {
                 "username": "Anthony Joseph",
                 "age": 34,
@@ -136,7 +136,7 @@ class APITestCase(TestCase):
         response = self.client.get("/mutual-friends-alive-brown-eyes/1/2/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
-            json.loads(response.content.decode("UTF-8")),
+            json.loads(response.content.decode("UTF-8")),  # type: ignore
             {
                 "mutual_friends": [{"name": "Maude Flanders"}],
                 "person_one": {
@@ -158,7 +158,7 @@ class APITestCase(TestCase):
         response = self.client.get("/mutual-friends-alive-brown-eyes/4/1/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertDictEqual(
-            json.loads(response.content.decode("UTF-8")),
+            json.loads(response.content.decode("UTF-8")),  # type: ignore
             {
                 "mutual_friends": [],
                 "person_one": {
