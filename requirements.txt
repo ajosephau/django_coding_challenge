@@ -10,7 +10,7 @@ sqlparse==0.4.2
 pytest
 pytest-cov==3.0.0
 pytest-django==4.5.2
-pytest-sugar==0.9.4
+pytest-sugar==0.9.5
 pre-commit==2.19.0
 mypy==0.961
 pyannotate==1.2.0
