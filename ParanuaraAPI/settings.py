@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "djmoney",
     "phonenumber_field",
     "rest_framework",
-    "drf_yasg2",
+    "drf_yasg",
     "information.apps.InformationConfig",
 ]
 
