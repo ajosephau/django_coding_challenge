@@ -14,8 +14,6 @@ repos:
       - id: check-builtin-literals
       - id: check-case-conflict
       - id: check-docstring-first
-#      - id: check-executables-have-shebangs
-#      - id: check-shebang-scripts-are-executable
       - id: check-json
       - id: check-merge-conflict
       - id: check-symlinks
@@ -28,18 +26,20 @@ repos:
       - id: detect-aws-credentials
         args: ['--allow-missing-credentials']
       - id: detect-private-key
-#      - id: double-quote-string-fixer
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: fix-encoding-pragma
       - id: file-contents-sorter
       - id: forbid-new-submodules
       - id: mixed-line-ending
+      - id: sort-simple-yaml
+      - id: trailing-whitespace
+#      - id: check-executables-have-shebangs
+#      - id: check-shebang-scripts-are-executable
+#      - id: double-quote-string-fixer
 #      - id: name-tests-test
 #      - id: pretty-format-json
 #      - id: requirements-txt-fixer
-      - id: sort-simple-yaml
-      - id: trailing-whitespace
 
   - repo: https://github.com/psf/black
     rev: 22.3.0
