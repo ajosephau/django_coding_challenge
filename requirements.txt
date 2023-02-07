@@ -12,7 +12,7 @@ pytest-cov==4.0.0
 pytest-django==4.5.2
 pytest-sugar==0.9.6
 pre-commit==3.0.3
-mypy==0.991
+mypy==1.0.0
 pyannotate==1.2.0
 pytest-annotate
 types_python_dateutil==2.8.19.6
