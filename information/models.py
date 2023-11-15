@@ -67,6 +67,6 @@ class Person(models.Model):
     )
     favourite_foods = models.ManyToManyField(Food)
     tags = models.ManyToManyField(Tag)
-    friends = models.ManyToManyField("Person", related_name="friends_of") # type: ignore
+    friends = models.ManyToManyField("Person", related_name="friends_of")  # type: ignore
 
     objects = PersonManager()
