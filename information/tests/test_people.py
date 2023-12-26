@@ -58,7 +58,7 @@ class PeopleImportTestCase(TestCase):
         self.assertEqual(person_obj.name, "Aisha Davis")
         self.assertEqual(person_obj.friends.first(), person_obj)
         self.assertEqual(
-            person_obj.friends_of.first(), person_obj
+            person_obj.friends_of.first(), person_obj  # type: ignore
         )  # check both sides of friendship relationship
         self.assertEqual(
             set(person_obj.favourite_foods.all().values_list("name", flat=True)),
