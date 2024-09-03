@@ -9,7 +9,7 @@ python-dateutil==2.9.0.post0
 sqlparse==0.5.1
 pytest
 pytest-cov==5.0.0
-pytest-django==4.8.0
+pytest-django==4.9.0
 pytest-sugar==1.0.0
 pre-commit==3.8.0
 mypy==1.11.2
