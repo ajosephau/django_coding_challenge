@@ -16,4 +16,4 @@ mypy==1.11.2
 pyannotate==1.2.0
 pytest-annotate
 types_python_dateutil==2.9.0.20240906
-django-stubs==5.0.4
+django-stubs==5.1.0
