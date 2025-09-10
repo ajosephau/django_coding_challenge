@@ -8,7 +8,7 @@ pytz==2025.2
 python-dateutil==2.9.0.post0
 sqlparse==0.5.3
 pytest
-pytest-cov==6.2.1
+pytest-cov==7.0.0
 pytest-django==4.11.1
 pytest-sugar==1.1.1
 pre-commit==4.3.0
