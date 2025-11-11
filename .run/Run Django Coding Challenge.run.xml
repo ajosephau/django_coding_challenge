@@ -1,6 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Django Coding Challenge" type="Python.DjangoServer" factoryName="Django server">
     <module name="django_coding_challenge" />
+    <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
@@ -8,9 +9,8 @@
       <env name="DJANGO_SETTINGS_MODULE" value="ParanuaraAPI.settings" />
     </envs>
     <option name="SDK_HOME" value="C:\Users\antho\PycharmProjects\django_coding_challenge\venv\Scripts\python.exe" />
-    <option name="SDK_NAME" value="Python 3.11 (django_coding_challenge)" />
     <option name="WORKING_DIRECTORY" value="" />
-    <option name="IS_MODULE_SDK" value="false" />
+    <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="launchJavascriptDebuger" value="false" />
