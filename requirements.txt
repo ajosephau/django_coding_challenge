@@ -2,7 +2,7 @@ djangorestframework==3.16.1
 django-money==3.5.4
 django-phonenumber-field==8.1.0
 Django==5.2.8
-drf-yasg==1.21.10
+drf-yasg==1.21.11
 phonenumbers==9.0.18
 pytz==2025.2
 python-dateutil==2.9.0.post0
