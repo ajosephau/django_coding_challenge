@@ -17,3 +17,4 @@ pyannotate==1.2.0
 pytest-annotate
 types_python_dateutil==2.9.0.20251115
 django-stubs==5.2.7
+django-stubs-ext==5.2.7
