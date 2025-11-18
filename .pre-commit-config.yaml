@@ -64,6 +64,6 @@ repos:
 #      - id: python-safety-dependencies-check
 
   - repo: https://github.com/pycqa/bandit
-    rev: 1.7.0
+    rev: 1.9.1
     hooks:
       - id: bandit
