@@ -3,7 +3,7 @@ django-money==3.5.4
 django-phonenumber-field==8.3.0
 Django==5.2.8
 drf-yasg==1.21.11
-phonenumbers==9.0.18
+phonenumbers==9.0.19
 pytz==2025.2
 python-dateutil==2.9.0.post0
 sqlparse==0.5.3
@@ -11,7 +11,7 @@ pytest
 pytest-cov==7.0.0
 pytest-django==4.11.1
 pytest-sugar==1.1.1
-pre-commit==4.4.0
+pre-commit==4.5.0
 mypy==1.18.2
 pyannotate==1.2.0
 pytest-annotate
