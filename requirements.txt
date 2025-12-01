@@ -6,7 +6,7 @@ drf-yasg==1.21.11
 phonenumbers==9.0.19
 pytz==2025.2
 python-dateutil==2.9.0.post0
-sqlparse==0.5.3
+sqlparse==0.5.4
 pytest
 pytest-cov==7.0.0
 pytest-django==4.11.1
