@@ -3,7 +3,7 @@ django-money==3.5.4
 django-phonenumber-field==8.4.0
 Django==6.0.1
 drf-yasg==1.21.14
-phonenumbers==9.0.21
+phonenumbers==9.0.22
 pytz==2025.2
 python-dateutil==2.9.0.post0
 sqlparse==0.5.5
