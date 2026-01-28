@@ -1,5 +1,5 @@
 djangorestframework==3.16.1
-django-money==3.5.4
+django-money==3.6.0
 django-phonenumber-field==8.4.0
 Django==6.0.1
 drf-yasg==1.21.14
