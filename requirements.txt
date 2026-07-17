@@ -15,5 +15,5 @@ pre-commit==4.6.0
 mypy==2.3.0
 pyannotate==1.2.0
 pytest-annotate
-types_python_dateutil==2.9.0.20260518
+types_python_dateutil==2.9.0.20260716
 django-stubs==6.0.7
