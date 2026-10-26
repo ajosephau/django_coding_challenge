@@ -5,7 +5,7 @@ Django==6.1.2
 drf-yasg==1.21.18
 phonenumbers==9.0.41
 pytz==2026.5
-python-dateutil==2.9.0.post0
+python-dateutil==3.0.0
 sqlparse==0.6.0
 pytest
 pytest-cov==7.1.0
